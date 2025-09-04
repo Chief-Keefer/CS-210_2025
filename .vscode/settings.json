@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "simple_programs/src"
+    ],
+    "java.project.referencedLibraries": [
+        "/Users/keef/lib/dsa.jar",
+        "/Users/keef/lib/stdlib.jar"
+    ]
+}
