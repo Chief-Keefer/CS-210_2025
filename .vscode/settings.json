@@ -3,7 +3,8 @@
         "simple_programs/src"
     ],
     "java.project.referencedLibraries": [
-        "/Users/keef/lib/dsa.jar",
-        "/Users/keef/lib/stdlib.jar"
-    ]
+        "/Users/keef/lib/stdlib.jar",
+        "/Users/keef/lib/dsa.jar"
+    ],
+    "java.search.scope": "all"
 }

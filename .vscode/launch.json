@@ -1,0 +1,119 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Card",
+            "request": "launch",
+            "mainClass": "Card",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "Die",
+            "request": "launch",
+            "mainClass": "Die",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "Factorial",
+            "request": "launch",
+            "mainClass": "Factorial",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "Fibonacci",
+            "request": "launch",
+            "mainClass": "Fibonacci",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "GCD",
+            "request": "launch",
+            "mainClass": "GCD",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "GreatCircle",
+            "request": "launch",
+            "mainClass": "GreatCircle",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "GreetThree",
+            "request": "launch",
+            "mainClass": "GreetThree",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "PerfectNumbers",
+            "request": "launch",
+            "mainClass": "PerfectNumbers",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "PrimalityTest",
+            "request": "launch",
+            "mainClass": "PrimalityTest",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "PrimeCounter",
+            "request": "launch",
+            "mainClass": "PrimeCounter",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "Quadratic",
+            "request": "launch",
+            "mainClass": "Quadratic",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "RamanujanNumbers",
+            "request": "launch",
+            "mainClass": "RamanujanNumbers",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "Stats",
+            "request": "launch",
+            "mainClass": "Stats",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "ThreeSort",
+            "request": "launch",
+            "mainClass": "ThreeSort",
+            "projectName": "CS-210_2025_8aef4a14"
+        },
+        {
+            "type": "java",
+            "name": "Triangle",
+            "request": "launch",
+            "mainClass": "Triangle",
+            "projectName": "CS-210_2025_8aef4a14"
+        }
+    ]
+}
