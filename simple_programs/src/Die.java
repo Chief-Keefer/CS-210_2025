@@ -17,7 +17,7 @@ public class Die {
         } else if (face == 5) {
             StdOut.println("*   *\n  *  \n*   *");
         } else {
-            StdOut.println("*   *\n*   *\n*   *");
+            StdOut.println("* * *\n     \n* * *");
         }
     }
 }

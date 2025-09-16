@@ -8,7 +8,7 @@ public class Triangle {
         int y = Integer.parseInt(args[1]);
         int z = Integer.parseInt(args[2]);
 
-        if (x + y > z && x + z > y && y + z > x) {
+        if (x + y >= z && x + z >= y && y + z >= x) {
             StdOut.println("true");
         } else {
             StdOut.println("false");

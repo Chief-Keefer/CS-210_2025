@@ -6,7 +6,7 @@ public class Quadratic {
         // TODO
         double a = Double.parseDouble(args[0]);
         if (a == 0) {
-            StdOut.println("Value of a must must not be zero");
+            StdOut.println("Value of a must not be 0");
             return;
         }
         double b = Double.parseDouble(args[1]);
