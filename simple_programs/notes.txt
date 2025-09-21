@@ -41,31 +41,33 @@ Then we print the value of the condition: if each one of the values are less tha
 
 Goal: Implementing conditional statements to check on variables. Performing arithmetic on values given from standard input and printing the value
 
-Approach: Another straightforward program, we perform a check on the first value given to determine whether it is < 0. 
+Approach: Another straightforward program, we perform a check on the first value given to determine whether it is < 0. Then calculate the roots using the quadratic equation and print them
 
 [Problem 7 (Six-sided Die)]
 
 Goal: Using if statements to decide which face of the die to print
 
-Approach: This was one of the more easier 
+Approach: This was one of the more easier problems to solve. First, we get a random number from 1 to 7 non inclusive. Then depending on that number, we print the face corresponding to the number to standard output
 
 [Problem 8 (Playing Card)]
 
-Goal: ...
+Goal: Implenting if statements and using the StdRandom library to decide which card to print
 
-Approach: ...
+Approach: Another one of the more easier problems. It is very similar to the Die program, but instead we get 2 random numbers denoting the number of the card and the suit. Then depending on those two numbers,
+we print the corresponding number and suit to standard output
 
 [Problem 9 (Greatest Common Divisor)]
 
-Goal: ...
+Goal: Using while loop to find the GCD
 
-Approach: ...
+Approach: No issues with this one as well. We take in two ints from standard input. Then we use a while loop until we find the GCD. Inside the while loop, we find the GCD using the mod operator
 
 [Problem 10 (Factorial Function)]
 
-Goal: ...
+Goal: Implementing for loops to find the Factorial of a number
 
-Approach: ...
+Approach: This was a fairly easy problem. We take in a value, n, from standard input, and we declare an int denoting the result and set it to 1. Next, we use a for loop up to n, where we start at 1, to
+multiply the result by the index
 
 [Problem 11 (Fibonacci Function)]
 

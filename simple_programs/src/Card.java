@@ -8,8 +8,6 @@ public class Card {
         int suit = StdRandom.uniform(1, 5);
         int rank = StdRandom.uniform(1, 14);
 
-        StdOut.println(suit + " " + rank);
-
         String suitString = "";
         String rankString = "";
 
