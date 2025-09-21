@@ -3,45 +3,51 @@ problem along with any issues you encountered and if/how you managed to solve th
 
 [Problem 1 (Greet Three)]
 
-Goal: ...
+Goal: Printing arguments given from standard input to standard output
 
-Approach: ...
+Approach: It was a fairly straight forward program with no issues. The first thing we always do, on any program, is store the arguments within a variable.
+Then I print those variables using the standard out library.
 
 [Problem 2 (Three Sort)]
 
-Goal: ...
+Goal: Sorting three integers given from standard input
 
-Approach: ...
+Approach: No issues encoutered on this one. I found the largest of the three numbers by using Math.max on integers x and the Math.max of integers y and z.
+Then I found the minimum by doing the same thing but with Math.min. Then to get the middle number, I added up all 3 integers and then subtracted the max and min numbers from the total.
 
 [Problem 3 (Great Circle Distance)]
 
-Goal: ...
+Goal: Performing complex arithmetic and outputting the result to standard output
 
-Approach: ...
+Approach: This problem was fairly easy, no issues. First, I had to convert the doubles given from standard input from degrees to radian and store them in their respective variables.
+Then perform the calculation using the formula given and outputting to standard output.
 
 [Problem 4 (Uniform Random Numbers)]
 
-Goal: ...
+Goal: Use the StdRandom library to get a 3 random numbers, and then use those numbers to find their mean, variance, and standard deviation.
 
-Approach: ...
+Approach: This problem was also fairly easy, with no issues. First, I stored 2 ints given from standard input and added one to the upper boundary because StdRandom gives a random number between a and b, not inclusive.
+Then I stored 3 random numbers from the upper and lower boundary in their respective variables. Next, I found the mean, standard deviation, and variance by using the random numbers from before and the formulas given.
+Finally, I output the mean, standard deviation, and variance on the same line
 
 [Problem 5 (Triangle Inequality)]
 
-Goal: ...
+Goal: Using boolean conditions and printing the output of the condition.
 
-Approach: ...
+Approach: This problem was straightforward with no problems. First, as always, we store 3 integers given to us in their respective variables.
+Then we print the value of the condition: if each one of the values are less than or equal to the sum of the other too.
 
 [Problem 6 (Quadratic Equation)]
 
-Goal: ...
+Goal: Implementing conditional statements to check on variables. Performing arithmetic on values given from standard input and printing the value
 
-Approach: ...
+Approach: Another straightforward program, we perform a check on the first value given to determine whether it is < 0. 
 
 [Problem 7 (Six-sided Die)]
 
-Goal: ...
+Goal: Using if statements to decide which face of the die to print
 
-Approach: ...
+Approach: This was one of the more easier 
 
 [Problem 8 (Playing Card)]
 

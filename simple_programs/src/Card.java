@@ -7,8 +7,12 @@ public class Card {
         // TODO
         int suit = StdRandom.uniform(1, 5);
         int rank = StdRandom.uniform(1, 14);
+
+        StdOut.println(suit + " " + rank);
+
         String suitString = "";
         String rankString = "";
+
         if (suit == 1) {
             suitString = "Clubs";
         } else if (suit == 2) {
@@ -18,6 +22,7 @@ public class Card {
         } else {
             suitString = "Spades";
         }
+
         if (rank == 1) {
             rankString = "Ace";
         } else if (rank == 11) {
@@ -29,6 +34,7 @@ public class Card {
         } else {
             rankString = Integer.toString(rank);
         }
+
         StdOut.println(rankString + " of " + suitString);
     }
 }
