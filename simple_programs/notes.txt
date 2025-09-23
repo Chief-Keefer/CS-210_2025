@@ -67,37 +67,43 @@ Approach: No issues with this one as well. We take in two ints from standard inp
 Goal: Implementing for loops to find the Factorial of a number
 
 Approach: This was a fairly easy problem. We take in a value, n, from standard input, and we declare an int denoting the result and set it to 1. Next, we use a for loop up to n, where we start at 1, to
-multiply the result by the index
+multiply the result by the index in each iteration. After the loop is finished, we print the result.
 
 [Problem 11 (Fibonacci Function)]
 
-Goal: ...
+Goal: Implement for loops to find the nth number of the Fibonacci sequence
 
-Approach: ...
+Approach: No issues with this one as it was very similar to the Factorial problem. First, we take in an integer from standard input to find out how long the for loop should go on for. Then we declare 3 variables, a, b, and c. 
+In the for loop, we assign c to be equal to a and b, then we make a equal to b and b equal to c. This goes on until we find the nth number in the sequence
 
 [Problem 12 (Primality Test)]
 
-Goal: ...
+Goal: Implementing nested if statements within a for loop to check for the primality of a number
 
-Approach: ...
+Approach: Another fairly easy problem. We don't want the loop to go on for a long time, so we loop until i <= square root of n. There is no operator or function that will tell us if a number is prime,
+but can we can check if n is divisible by any number using the mod operator. If during any iteration, n is divisible by i, we know the number is not prime.
 
 [Problem 13 (Counting Primes)]
 
-Goal: ...
+Goal: Implementing nested for loops to count the number of primes less than or equal to a given number, n
 
-Approach: ...
+Approach: This program was made easy because you can implement code from the problem before. We put the primality test within another for loop, and if a number is prime, 
+we break out of that loop and increment the prime counter. Which was declared earlier in the code before the loops
 
 [Problem 14 (Perfect Numbers)]
 
-Goal: ...
+Goal: Implementing nested for loops to find perfect numbers
 
-Approach: ...
+Approach: We search through the loops until we find 2 numbers, where 1 divises the other. If we find the divisor, we add it to sum, 
+and if the sum is equal to the dividend, then we print the sum to standard output.
 
 [Problem 15 (Ramanujan Numbers)]
 
-Goal: ...
+Goal: Implementing nested while loops to find ramanujan numbers
 
-Approach: ...
+Approach: First we take in an integer, n, from standard input to dictate how long we want the loops to run. To start off the loop, we declare an integer a equal to one before the loop. 
+Then in each loop we declare a integer that is one more than the previous integer declared. In the innermost loop, we check if the sum of 2 cubes are equal to the sum of the other 2 cubes, 
+if it is we print those numbers orderly in standard output. The while loops stop if the cube of an integer is larger than the number given to us from standard input.
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
