@@ -1,10 +1,11 @@
 {
-    "java.project.sourcePaths": [
-        "simple_programs/src"
-    ],
-    "java.project.referencedLibraries": [
-        "/Users/keef/lib/stdlib.jar",
-        "/Users/keef/lib/dsa.jar"
-    ],
-    "java.search.scope": "all"
+  "java.project.sourcePaths": [
+    "simple_programs/src",
+    "global_sequence_alignment/src"
+  ],
+  "java.project.referencedLibraries": [
+    "/Users/keef/lib/stdlib.jar",
+    "/Users/keef/lib/dsa.jar"
+  ],
+  "java.search.scope": "all"
 }

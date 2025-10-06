@@ -3,15 +3,20 @@ problem along with any issues you encountered and if/how you managed to solve th
 
 [Problem 1 (Compute Edit Distance)]
 
-Goal: ... 
+Goal: Use dynamic programming, implementing nested loops and conditional statements,
+to measure the similarity between two genetic sequences. 
 
-Approach: ... 
+Approach: First, I read the 2 strings we are comparing and store them and their lengths in variables.
+Then I create the edit-distance matrix and initialize the bottom row and the right-most column. Next, we fill out the rest of the matrix using a nested for loop
+checking if either we should insert a gap or if the characters match. Finally we print the strings and the matrix to standard output
+
 
 [Problem 2 (Recover Alignment)]
 
-Goal: ... 
+Goal: Retrace our steps from the edit distance matrix and print the Alignment of the 2 strings x and y. 
 
-Approach: ... 
+Approach: First, read the 2 strings, x and y, and the edit-distance matrix from standard input. In a while loop, we iterate through the matrix, printing the alignment based on 3 cases:
+if we need to insert a gap in string x, if we need to insert a gap in string y, or if the characters match/if the characters don't math.
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
