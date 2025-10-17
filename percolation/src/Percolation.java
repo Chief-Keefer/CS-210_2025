@@ -14,11 +14,13 @@ public class Percolation {
     // Constructs an n x n percolation system, with all sites blocked.
     public Percolation(int n) {
         // TODO
+        if (n <= 0)
+            throw new IllegalArgumentException("Illegal n");
         this.n = n;
         grid = new boolean[n][n];
         openSites = 0;
-        uf1 = new WeightedQuickUnionPathCompressionUF(n * n + 2); // including source and sink
-        uf2 = new WeightedQuickUnionPathCompressionUF(n * n + 1); // including only source
+        uf1 = new WeightedQuickUnionPathCompressionUF(n * n + 2); // source and sink
+        uf2 = new WeightedQuickUnionPathCompressionUF(n * n + 1); // source
         source = 0;
         sink = n * n + 1;
     }
@@ -26,30 +28,78 @@ public class Percolation {
     // Opens site (i, j) if it is not already open.
     public void open(int i, int j) {
         // TODO
+        if (i < 0 || i >= n || j < 0 || j >= n)
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        if (!grid[i][j]) {
+            grid[i][j] = true;
+            openSites++;
+            int currentSite = encode(i, j);
+
+            // If the site is in the first or last row, connect it to the source or sink
+            if (i == 0) {
+                uf1.union(source, currentSite);
+                uf2.union(source, currentSite);
+
+            } else if (i == n - 1) {
+                uf1.union(sink, currentSite);
+            }
+
+            // handles the case when n = 1
+            if (n == 1) {
+                uf1.union(sink, currentSite);
+            }
+
+            // Connect to adjacent open sites
+            if (i + 1 < n || i - 1 >= 0) {
+                if (i + 1 < n && grid[i + 1][j]) { // down
+                    uf1.union(currentSite, encode(i + 1, j));
+                    uf2.union(currentSite, encode(i + 1, j));
+                }
+                if (i - 1 >= 0 && grid[i - 1][j]) { // up
+                    uf1.union(currentSite, encode(i - 1, j));
+                    uf2.union(currentSite, encode(i - 1, j));
+                }
+            }
+            if (j + 1 < n || j - 1 >= 0) {
+                if (j + 1 < n && grid[i][j + 1]) { // right
+                    uf1.union(currentSite, encode(i, j + 1));
+                    uf2.union(currentSite, encode(i, j + 1));
+                }
+                if (j - 1 >= 0 && grid[i][j - 1]) { // left
+                    uf1.union(currentSite, encode(i, j - 1));
+                    uf2.union(currentSite, encode(i, j - 1));
+                }
+            }
+
+        }
     }
 
     // Returns true if site (i, j) is open, and false otherwise.
     public boolean isOpen(int i, int j) {
         // TODO
-        return false;
+        if (i < 0 || i >= n || j < 0 || j >= n)
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        return grid[i][j];
     }
 
     // Returns true if site (i, j) is full, and false otherwise.
     public boolean isFull(int i, int j) {
         // TODO
-        return false;
+        if (i < 0 || i >= n || j < 0 || j >= n)
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        return uf2.connected(source, encode(i, j));
     }
 
     // Returns the number of open sites.
     public int numberOfOpenSites() {
         // TODO
-        return 0;
+        return openSites;
     }
 
     // Returns true if this system percolates, and false otherwise.
     public boolean percolates() {
         // TODO
-        return false;
+        return uf1.connected(source, sink);
     }
 
     // Returns an integer ID (1...n) for site (i, j).

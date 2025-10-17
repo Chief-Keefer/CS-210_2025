@@ -9,30 +9,43 @@ public class PercolationStats {
     // Performs m independent experiments on an n x n percolation system.
     public PercolationStats(int n, int m) {
         // TODO
+        if (n <= 0 || m <= 0)
+            throw new IllegalArgumentException("Illegal n or m");
+        this.m = m;
+        x = new double[m];
+        for (int trial = 0; trial < m; trial++) {
+            Percolation perc = new Percolation(n);
+            while (!perc.percolates()) {
+                int i = StdRandom.uniform(0, n);
+                int j = StdRandom.uniform(0, n);
+                perc.open(i, j);
+            }
+            x[trial] = (double) perc.numberOfOpenSites() / (n * n);
+        }
     }
 
     // Returns sample mean of percolation threshold.
     public double mean() {
         // TODO
-        return 0;
+        return StdStats.mean(x);
     }
 
     // Returns sample standard deviation of percolation threshold.
     public double stddev() {
         // TODO
-        return 0;
+        return StdStats.stddev(x);
     }
 
     // Returns low endpoint of the 95% confidence interval.
     public double confidenceLow() {
         // TODO
-        return 0;
+        return this.mean() - (1.96 * this.stddev() / Math.sqrt(m));
     }
 
     // Returns high endpoint of the 95% confidence interval.
     public double confidenceHigh() {
         // TODO
-        return 0;
+        return this.mean() + (1.96 * this.stddev() / Math.sqrt(m));
     }
 
     // Unit tests the data type. [DO NOT EDIT]
