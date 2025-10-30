@@ -1,8 +1,9 @@
 {
   "java.project.sourcePaths": [
     "simple_programs/src",
+    "percolation/src",
     "global_sequence_alignment/src",
-    "percolation/src"
+    "collections/src"
   ],
   "java.project.referencedLibraries": [
     "/Users/keef/lib/stdlib.jar",
