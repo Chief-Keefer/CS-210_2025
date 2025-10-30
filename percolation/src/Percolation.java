@@ -29,7 +29,7 @@ public class Percolation {
     public void open(int i, int j) {
         // TODO
         if (i < 0 || i >= n || j < 0 || j >= n)
-            throw new IndexOutOfBoundsException("Index out of bounds");
+            throw new IndexOutOfBoundsException("Illegal i or j");
         if (!grid[i][j]) {
             grid[i][j] = true;
             openSites++;
@@ -50,22 +50,26 @@ public class Percolation {
             }
 
             // Connect to adjacent open sites
-            if (i + 1 < n || i - 1 >= 0) {
-                if (i + 1 < n && grid[i + 1][j]) { // down
+            if (i + 1 < n) {
+                if (isOpen(i + 1, j)) { // down
                     uf1.union(currentSite, encode(i + 1, j));
                     uf2.union(currentSite, encode(i + 1, j));
                 }
-                if (i - 1 >= 0 && grid[i - 1][j]) { // up
+            }
+            if (i - 1 >= 0) {
+                if (isOpen(i - 1, j)) { // up
                     uf1.union(currentSite, encode(i - 1, j));
                     uf2.union(currentSite, encode(i - 1, j));
                 }
             }
-            if (j + 1 < n || j - 1 >= 0) {
-                if (j + 1 < n && grid[i][j + 1]) { // right
+            if (j + 1 < n) {
+                if (isOpen(i, j + 1)) { // right
                     uf1.union(currentSite, encode(i, j + 1));
                     uf2.union(currentSite, encode(i, j + 1));
                 }
-                if (j - 1 >= 0 && grid[i][j - 1]) { // left
+            }
+            if (j - 1 >= 0) {
+                if (isOpen(i, j - 1)) { // left
                     uf1.union(currentSite, encode(i, j - 1));
                     uf2.union(currentSite, encode(i, j - 1));
                 }
@@ -78,7 +82,7 @@ public class Percolation {
     public boolean isOpen(int i, int j) {
         // TODO
         if (i < 0 || i >= n || j < 0 || j >= n)
-            throw new IndexOutOfBoundsException("Index out of bounds");
+            throw new IndexOutOfBoundsException("Illegal i or j");
         return grid[i][j];
     }
 
@@ -86,7 +90,7 @@ public class Percolation {
     public boolean isFull(int i, int j) {
         // TODO
         if (i < 0 || i >= n || j < 0 || j >= n)
-            throw new IndexOutOfBoundsException("Index out of bounds");
+            throw new IndexOutOfBoundsException("Illegal i or j");
         return uf2.connected(source, encode(i, j));
     }
 

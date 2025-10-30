@@ -45,9 +45,6 @@ public class Die {
     // Returns a string representation of this die.
     public String toString() {
         // TODO
-        if (this.value == -1) {
-            return "Die not rolled yet";
-        }
         if (this.value == 1) {
             return "     \n  *  \n     ";
         } else if (this.value == 2) {
@@ -58,9 +55,10 @@ public class Die {
             return "*   *\n     \n*   *";
         } else if (this.value == 5) {
             return "*   *\n  *  \n*   *";
-        } else { // this.value == 6
+        } else if (this.value == 6) {
             return "*   *\n*   *\n*   *";
         }
+        return "Error";
     }
 
     // Unit tests the data type. [DO NOT EDIT]

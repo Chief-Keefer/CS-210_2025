@@ -3,22 +3,27 @@ problem along with any issues you encountered and if/how you managed to solve th
 
 Problem 1 (Percolation Data Type): ...
 
-Goal: ... 
+Goal: Create a data type that emulates a percolation/porous system using the Union-Find data structure and a 2D array
 
-Approach: ... 
+Approach: First thing I implemented were the helper methods to get them out of the way. Next was the constructor, where instance variables are initalized which involves creating a 2D array and instantiating 
+union-find objects. Finally, the open method, which was fairly easy but there was a little struggle with checking if adjacent neighbors were open because I would keep getting index out of bounds errors.
+I was able to figure it out by nesting the check in another if statement checking if the index is in bounds.
+
 
 Problem 2 (Estimation of Percolation Threshold): ...
 
-Goal: ... 
+Goal: Use the percolation data type to perform multiple experiments on n x n percolation systems to calculate an accurate percolation threshold.
 
-Approach: ... 
+Approach: This problem was fairly easy compared to the first one. First, we get out the helper methods like mean, stddev, etc using the StdStats library. Then, I implemented
+the constructor which is where we perform m experiments using a for loop, where we create a percolation system and open random sites within the system until it percolates, then we store the threshold in an array.
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 
 Source                               Help Received
 ------                               -------------
 
-...                                  ...
+Zhen Lu                              My VSCode wasnt detecting the dsa library and stopped my code from compiling. After several minutes of troubleshooting 
+                                    I asked for help. After some more troubleshooting we fixed the problem by redownloading the libraries into my lib folder
 
 3. List any other comments here. Feel free to provide any feedback on how much you learned from
 doing the assignment, and whether you enjoyed doing it.
