@@ -26,18 +26,24 @@ public class Primes implements Iterable<Integer> {
         // Constructs an iterator.
         public PrimesIterator() {
             // TODO
+            count = 0;
+            p = 2;
         }
 
         // Returns true if there are anymore primes to be iterated, and false otherwise.
         public boolean hasNext() {
             // TODO
-            return false;
+            return count < n;
         }
 
         // Returns the next prime.
         public Integer next() {
             // TODO
-            return 0;
+            while (!isPrime(p)) {
+                p++;
+            }
+            count++;
+            return p++;
         }
 
         // Returns true if x is a prime, and false otherwise.

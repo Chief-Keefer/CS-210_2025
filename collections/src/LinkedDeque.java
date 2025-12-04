@@ -7,64 +7,126 @@ import stdlib.StdRandom;
 // data structure.
 public class LinkedDeque<T> implements Iterable<T> {
     private Node first; // the first node in the linked list
-    private Node last;  // the last node in the linked list
-    private int n;      // the number of nodes in the linked list
+    private Node last; // the last node in the linked list
+    private int n; // the number of nodes in the linked list
 
     // Constructs an empty deque.
     public LinkedDeque() {
         // TODO
+        first = null;
+        last = null;
+        n = 0;
     }
 
     // Returns true if this deque is empty, and false otherwise.
     public boolean isEmpty() {
         // TODO
-        return false;
+        return n == 0;
     }
 
     // Returns the number of items in this deque.
     public int size() {
         // TODO
-        return 0;
+        return n;
     }
 
     // Adds item to the front of this deque.
     public void addFirst(T item) {
         // TODO
+        if (item == null) {
+            throw new NullPointerException("item is null");
+        }
+
+        Node newNode = new Node();
+        newNode.item = item;
+        if (isEmpty()) {
+            first = newNode;
+            last = newNode;
+        } else {
+            newNode.next = first;
+            first.prev = newNode;
+            first = newNode;
+        }
+        n++;
     }
 
     // Adds item to the back of this deque.
     public void addLast(T item) {
         // TODO
+        if (item == null) {
+            throw new NullPointerException("item is null");
+        }
+
+        Node newNode = new Node();
+        newNode.item = item;
+        if (isEmpty()) {
+            first = newNode;
+            last = newNode;
+        } else {
+            last.next = newNode;
+            newNode.prev = last;
+            last = newNode;
+        }
+        n++;
     }
 
     // Returns the item at the front of this deque.
     public T peekFirst() {
         // TODO
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Deque is empty");
+        }
+        return first.item;
     }
 
     // Removes and returns the item at the front of this deque.
     public T removeFirst() {
         // TODO
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Deque is empty");
+        }
+        T item = first.item;
+        first = first.next;
+        if (first != null) {
+            first.prev = null;
+        } else {
+            last = null; // Deque is now empty
+        }
+        n--;
+        return item;
     }
 
     // Returns the item at the back of this deque.
     public T peekLast() {
         // TODO
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Deque is empty");
+        }
+        return last.item;
     }
 
     // Removes and returns the item at the back of this deque.
     public T removeLast() {
         // TODO
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Deque is empty");
+        }
+        T item = last.item;
+        last = last.prev;
+        if (last != null) {
+            last.next = null;
+        } else {
+            first = null; // Deque is now empty
+        }
+        n--;
+        return item;
     }
 
-    // Returns an iterator to iterate over the items in this deque from front to back.
+    // Returns an iterator to iterate over the items in this deque from front to
+    // back.
     public Iterator<T> iterator() {
         // TODO
-        return null;
+        return new DequeIterator();
     }
 
     // Returns a string representation of this deque.
@@ -79,31 +141,39 @@ public class LinkedDeque<T> implements Iterable<T> {
     // A deque iterator.
     private class DequeIterator implements Iterator<T> {
         // TODO
+        private Node current;
 
         // Constructs an iterator.
         public DequeIterator() {
             // TODO
+            current = first;
         }
 
         // Returns true if there are more items to iterate, and false otherwise.
         public boolean hasNext() {
             // TODO
-            return false;
+            return current != null;
         }
 
         // Returns the next item.
         public T next() {
             // TODO
-            return null;
+            if (!hasNext()) {
+                throw new NoSuchElementException("Iterator is empty");
+            }
+            T item = current.item;
+            current = current.next;
+            return item;
         }
     }
 
-    // A data type to represent a doubly-linked list. Each node in the list stores a generic item
+    // A data type to represent a doubly-linked list. Each node in the list stores a
+    // generic item
     // and references to the next and previous nodes in the list.
     private class Node {
-        private T item;  // the item
-        private Node next;  // the next node
-        private Node prev;  // the previous node
+        private T item; // the item
+        private Node next; // the next node
+        private Node prev; // the previous node
     }
 
     // Unit tests the data type. [DO NOT EDIT]

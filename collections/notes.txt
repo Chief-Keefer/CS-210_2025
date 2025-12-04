@@ -3,15 +3,24 @@ problem along with any issues you encountered and if/how you managed to solve th
 
 [Problem 1 (Deque)]
 
-Goal: ...
+Goal: Create a data structure, a doubly-linked deque, which is like a combination of a stack and queue.
+It supports adding and removing items from both ends efficiently.
 
-Approach: ...
+Approach: The deque was fairly easy to implement. I started with the O(1) methods first like isEmpty, size, peekFirst, and peekLast to set up the basic structure.
+Then I implemented addFirst, addLast, removeFirst, and removeLast to add and remove nodes to the front and back of the deque. It was a bit tricky to manage the pointers correctly, especially when the deque was empty.
+I had to make sure to update both the first and last pointers appropriately. After that, I implemented the iterator to allow for iteration over the deque from front to back. Overall, I found this problem straightforward and manageable.
 
 [Problem 2 (Random Queue)]
 
-Goal: ...
+Goal: Create a data structure, using a resizing array, that allows for adding items and removing them in random order.
 
-Approach: ...
+Approach: I began by implementing the basic structure of the resizing array random queue, starting with the constructor, isEmpty, and size methods.
+Next, I implemented the enqueue method to add items to the array, resizing it as necessary. The dequeue method was a bit more complex but 
+I managed it by selecting a random index, swapping the item at that index with the last item, and then removing the last item. 
+Finally, I implemented the iterator to allow for iteration over the items in random order. I created a deep copy of the current items, shuffled them, and then iterated through that shuffled array. 
+I found this problem to also be quite manageable and straightforward.
+
+
 
 2. Did you receive any help? List the sources along with a short description of the help received.
 

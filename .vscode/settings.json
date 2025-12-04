@@ -3,7 +3,8 @@
     "simple_programs/src",
     "percolation/src",
     "global_sequence_alignment/src",
-    "collections/src"
+    "collections/src",
+    "autocomplete/src"
   ],
   "java.project.referencedLibraries": [
     "/Users/keef/lib/stdlib.jar",

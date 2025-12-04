@@ -1,0 +1,42 @@
+1. For each problem, state its goal in your own words and describe your approach to solve the 
+problem along with any issues you encountered and if/how you managed to solve those issues.
+
+[Problem 1 (Autocomplete Term)]
+
+Goal: Create a comparable data type that represents a search term in an autocomplete system,
+including its query string and weight, and implement comparison methods to facilitate sorting
+based on different criteria.
+
+Approach: First, I defined the instance variables for the query string and weight. Next, I initialized those variables in the constructure and then added all the corner cases for the methods that needed them. 
+The other methods in the program were easy one liners. Finally, I created static comparator methods to compare terms by weight in descending order and by prefix order based on a specified length. 
+For the prefix order comparator method, to get the prefixes from the terms, I used a ternary operator to compare the lengths of the terms with the given length, r. If the term's length was less than r, 
+I used the entire term as the prefix; otherwise, I used the substring of the term up to r.
+
+[Problem 2 (Binary Search Deluxe)]
+
+Goal: Implement binary search methods to find the first and last indices of terms in a sorted array that match a given prefix, using custom comparators.
+
+Approach: This problem was fairly easy. It was like a standard binary search, but instead of checking for equality, I used the given comparator to determine if the middle element matched the prefix.
+If it did, I updated the result index and continued searching in the left half for the first index or the right half for the last index. If it didn't match, I adjusted the search range based on the comparator's result.
+
+[Problem 3 (Autocomplete)]
+
+Goal: Implement an autocomplete system that returns the top k matching terms for a given prefix, in an array, sorted by weight in descending order.
+
+Approach: I started by using the BinarySearchDeluxe methods to find the first and last indices of terms that match the given prefix.
+Then, I created a new array to hold the matching terms and populated it by iterating through the original array from the first to the last index.
+After that, I sorted the matching terms array using the Term.byReverseWeightOrder() comparator to sort them by weight in descending order.
+Finally, I created a result array of size k and copied the top k terms from the sorted matching terms array into the result array, which I then returned.
+
+2. Did you receive any help? List the sources along with a short description of the help received.
+
+Source                               Help Received
+------                               -------------
+
+...                                  ...
+
+3. List any other comments here. Feel free to provide any feedback on how much you learned from
+doing the assignment, and whether you enjoyed doing it.
+
+...
+ 
